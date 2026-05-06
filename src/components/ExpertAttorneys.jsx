@@ -1,6 +1,6 @@
 // components/ExpertAttorneys.jsx
 import { useState } from 'react';
-import { assets } from '../assets/js/assets';
+// import { assets } from '../assets/js/assets';
 
 const ExpertAttorneys = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -14,7 +14,7 @@ const ExpertAttorneys = () => {
       specialization: "Intellectual Property Rights, Corporate Law",
       education: "LL.M. from Harvard Law School",
       awards: "Top 10 Lawyers in India - 2023",
-      image: assets.attorney22 || "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&h=600&fit=crop",
+      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&h=600&fit=crop",
       email: "abhijeet@coinmedlegal.com",
       phone: "+91 80097 92188",
       social: {
@@ -30,7 +30,7 @@ const ExpertAttorneys = () => {
       specialization: "Criminal Law, Matrimonial Matters",
       education: "LL.B. from Delhi University",
       awards: "Women Achiever in Law - 2022",
-      image: assets.attorney14 || "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&h=600&fit=crop",
+      image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=500&h=600&fit=crop",
       email: "priya@coinmedlegal.com",
       phone: "+91 80097 92189",
       social: {
@@ -46,7 +46,7 @@ const ExpertAttorneys = () => {
       specialization: "Medical Negligence, MACT",
       education: "LL.M. from National Law School",
       awards: "Best Litigator Award - 2021",
-      image: assets.attorney15 || "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=500&h=600&fit=crop",
+      image:  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&h=600&fit=crop",
       email: "rajesh@coinmedlegal.com",
       phone: "+91 80097 92190",
       social: {
