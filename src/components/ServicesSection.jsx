@@ -9,49 +9,63 @@ const Services = () => {
     {
       id: 1,
       title: "Intellectual Property Rights",
-      image: assets.service4 || "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&h=400&fit=crop",
+      // service4 image name
+      image: assets.service00 || "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&h=400&fit=crop",
       description: "Our attorneys work closely with clients to develop customized strategies to protect their intellectual property assets and help them achieve their business goals. We guide developing and managing IP portfolios, including conducting IP audits and providing advice on registration and enforcement of IP rights."
     },
     {
       id: 2,
       title: "General Insurance",
-      image: assets.service7 || "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=400&fit=crop",
+      // service7 image name
+      image: assets.service00 || "https://www.swarnadharaaconsultant.com/wp-content/uploads/2026/01/general-insurance3.jpg",
       description: "Our insurance lawyers work closely with clients to understand their insurance needs and objectives and develop legal strategies that help them achieve their goals. We have experience working with clients in a wide range of industries. We also represent policyholders in disputes with insurance companies and have successfully recovered millions of dollars in insurance coverage for our clients."
     },
     {
       id: 3,
       title: "Medical Negligence",
-      image: assets.service8 || "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop",
+      // service8 image name
+
+      image: assets.service00 || "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop",
       description: "We provide expert legal representation for those who have suffered due to medical errors and faced challenges in receiving fair compensation. Medical negligence claims arise when healthcare professionals fail to meet the correct standard of care, causing harm to the patient."
     },
     {
       id: 4,
       title: "Information Technology",
-      image: assets.service9 || "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop",
+      // service9 image name
+
+      image: assets.service00 || "https://onesim-production.s3.ap-southeast-1.amazonaws.com/onesim/media/about-sim-accreditations/it_1.jpg",
       description: "Our mission is to help companies leverage technology safely and legally, safeguarding their digital assets while fostering growth and innovation. Our legal support covers a wide range of issues, including compliance with cybersecurity regulations, software licensing, data protection, data breaches, privacy, and intellectual property rights."
     },
     {
       id: 5,
       title: "MACT",
-      image: assets.service10 || "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600&h=400&fit=crop",
+      // service10 image name
+
+      image: assets.service00 || "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600&h=400&fit=crop",
       description: "Our firm specializes in the judicial protection of MACT claims, addressing incidents involving motor vehicle accidents. We stand firmly with victims, ensuring they receive the financial relief they deserve. At CoinMed Legal, every client receives personalized legal support to comprehend their case and secure appropriate compensation."
     },
     {
       id: 6,
       title: "Criminal Law",
-      image: assets.service11 || "https://images.unsplash.com/photo-1589578228447-e1a4e481c6e8?w=600&h=400&fit=crop",
+      // service11 image name
+
+      image: assets.service00 || "https://lawyerkolkata.in/wp-content/uploads/2025/07/Criminal-Law.jpg",
       description: "Our criminal law services include advising clients on criminal law matters, representing clients in court, negotiating plea agreements, and conducting investigations. As a full-service law firm, CoinMed Legal is committed to providing the highest quality legal services to our clients."
     },
     {
       id: 7,
       title: "Matrimonial Matters",
-      image: assets.service12 || "https://images.unsplash.com/photo-1516589091380-5d8e0c9070d9?w=600&h=400&fit=crop",
+      // service12 image name
+
+      image: assets.service00 || "https://blog.ipleaders.in/wp-content/uploads/2016/12/The-ins-and-outs-of-family-law.jpg",
       description: "Our firm is deeply committed to providing comprehensive and passionate legal services to our clients. We understand the privacy and delicate nature of matrimonial matters, striving to achieve the best possible outcomes for clients and their families."
     },
     {
       id: 8,
       title: "Commercial Recovery",
-      image: assets.service13 || "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop",
+      // service13 image name
+
+      image: assets.service00 || "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop",
       description: "The firm excels in overseeing operations from start to finish, adeptly navigating unexpected business challenges. Recognizing that many unpaid dues are often written off due to fears of prolonged litigation, our legal professionals understand the complexities of financial difficulties and the urgent need for recovery."
     }
   ];
