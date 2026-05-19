@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom"
 import Header from "../Header"
 import TopBar from "../TopBar"
 import Footer from "../Footer"
+import FloatingButtons from "../FloatingButtons"
 
 const WebLayout = () => {
   return (
@@ -12,6 +13,7 @@ const WebLayout = () => {
             <Outlet />
         </main>
         <Footer />
+        <FloatingButtons />
     </>
   )
 }
