@@ -1,5 +1,6 @@
 // components/Gallery.jsx
 import { useState } from 'react';
+import { assets } from '../assets/js/assets';
 
 const Gallery = () => {
     const [activeTab, setActiveTab] = useState('all');
@@ -7,74 +8,29 @@ const Gallery = () => {
     const galleryImages = {
         all: [
             // Lawyers at Work Images
-            "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=400&h=300&fit=crop",
+            assets.gallery1,assets.gallery2,assets.gallery3,assets.gallery4,
             // Court Room Images
-            "https://images.unsplash.com/photo-1589578228447-e1a4e481c6e8?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1589391886645-d0ba5a8cc4fa?w=400&h=300&fit=crop",
+            assets.courtroom1,assets.courtroom2,assets.courtroom3,assets.courtroom4,            
             // Miami Conference Images
-            "https://images.unsplash.com/photo-1515187029135-8ee3e6df8a50?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1560523159-4a9692d222ef?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?w=400&h=300&fit=crop"
+            assets.miami1,assets.miami2,assets.miami3,
         ],
-        lawyers: [
-            "https://images.unsplash.com/photo-1589829545856-d10d557cf95f", // lawyer with justice scale
-            "https://images.unsplash.com/photo-1555374018-13a8994ab246", // legal documents
-            "https://images.unsplash.com/photo-1605664041952-68e3c0c4c9c4", // courtroom
-            "https://images.unsplash.com/photo-1603791440384-56cd371ee9a7", // business lawyer
-            "https://images.unsplash.com/photo-1589216532372-1c2a367900d9", // law books
-            "https://images.unsplash.com/photo-1521791136064-7986c2920216", // lawyer discussion
-            "https://images.unsplash.com/photo-1562564055-71e051d33c19", // legal handshake
-            "https://images.unsplash.com/photo-1600267165600-3f0a2f7a7f72", // judge hammer
-            "https://images.unsplash.com/photo-1556155092-8707de31f9c4", // office lawyer
-            "https://images.unsplash.com/photo-1593113598332-cd288d649433"  // law consultation
-        ],
+        
         work: [
-            "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?w=400&h=300&fit=crop"
+            assets.gallery1,assets.gallery2,assets.gallery3,assets.gallery4,
+
         ],
         courtroom: [
-            "https://images.unsplash.com/photo-1589578228447-e1a4e481c6e8?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1589391886645-d0ba5a8cc4fa?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=300&fit=crop"
+            assets.courtroom1,assets.courtroom2,assets.courtroom3,assets.courtroom4,            
+         
         ],
         conference: [
-            "https://images.unsplash.com/photo-1515187029135-8ee3e6df8a50?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1560523159-4a9692d222ef?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1541746972996-4fdd1b4c5c9b?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=400&h=300&fit=crop"
+            assets.miami1,assets.miami2,assets.miami3,
+            
         ]
     };
 
     const getCurrentImages = () => {
         if (activeTab === 'all') return galleryImages.all;
-        if (activeTab === 'lawyers') return galleryImages.lawyers;
         if (activeTab === 'work') return galleryImages.work;
         if (activeTab === 'courtroom') return galleryImages.courtroom;
         if (activeTab === 'conference') return galleryImages.conference;
@@ -112,15 +68,7 @@ const Gallery = () => {
                     >
                         All
                     </button>
-                    <button
-                        onClick={() => setActiveTab('lawyers')}
-                        className={`px-6 md:px-8 py-2.5 md:py-3 rounded-full font-semibold transition-all duration-300 ${activeTab === 'lawyers'
-                                ? 'bg-gradient-to-r from-yellow-500 to-amber-500 text-white shadow-lg transform scale-105'
-                                : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
-                            }`}
-                    >
-                        LAWYERS
-                    </button>
+                   
                     <button
                         onClick={() => setActiveTab('work')}
                         className={`px-6 md:px-8 py-2.5 md:py-3 rounded-full font-semibold transition-all duration-300 ${activeTab === 'work'
