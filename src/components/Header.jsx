@@ -1,7 +1,9 @@
 // components/Header.jsx
+
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { Menu, X, ChevronDown, Scale } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { assets } from "../assets/js/assets";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,6 +11,7 @@ const Header = () => {
 
   const navItems = [
     { name: "Home", path: "/" },
+
     {
       name: "Pages",
       dropdown: [
@@ -17,6 +20,7 @@ const Header = () => {
         { name: "Gallery", path: "/gallery" },
       ],
     },
+
     { name: "Attorney", path: "/attorney" },
     { name: "Internship", path: "/internship" },
     { name: "Members", path: "/members" },
@@ -25,50 +29,72 @@ const Header = () => {
   ];
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
+    <nav className="bg-white shadow-md sticky top-0 z-50 border-b border-gray-100">
+
       <div className="max-w-7xl mx-auto px-4 md:px-8">
+
         <div className="flex justify-between items-center h-20">
 
           {/* Logo */}
-          <div className="flex items-center gap-2 cursor-pointer group">
-            <div className="bg-[#0A1628] p-2 rounded-lg group-hover:rotate-6 transition">
-              <Scale size={26} className="text-[#C6A43F]" />
-            </div>
-            <div>
-              <h1 className="text-xl font-bold">
-                <span className="text-[#0A1628]">Coinmed</span>
-                <span className="text-[#C6A43F]"> Legal</span>
-              </h1>
-              <p className="text-[10px] text-gray-500">
-                Advocates & Consultants
-              </p>
-            </div>
-          </div>
+          <NavLink
+            to="/"
+            className="flex items-center gap-3 cursor-pointer group"
+          >
+            <img
+              src={assets.removeLogo}
+              alt="Coinmed Legal Logo"
+              className="w-[150px] md:w-[170px] h-auto object-contain transition duration-300 group-hover:scale-105"
+            />
+          </NavLink>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-8">
+
             {navItems.map((item, idx) => (
+
               <div key={idx} className="relative group">
 
-                {/* Dropdown */}
+                {/* Dropdown Menu */}
                 {item.dropdown ? (
                   <>
                     <button
-                      className="flex items-center gap-1 text-gray-700 hover:text-[#C6A43F] font-medium"
+                      className="flex items-center gap-1 text-gray-700 hover:text-[#C6A43F] font-medium transition"
                     >
                       {item.name}
+
                       <ChevronDown
                         size={16}
-                        className="group-hover:rotate-180 transition"
+                        className="transition duration-300 group-hover:rotate-180"
                       />
                     </button>
 
-                    <div className="absolute left-0 top-full mt-2 w-52 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
+                    {/* Dropdown Content */}
+                    <div
+                      className="
+                        absolute left-0 top-full mt-3
+                        w-56 bg-white rounded-xl shadow-2xl
+                        border border-gray-100
+                        opacity-0 invisible
+                        translate-y-3
+                        group-hover:opacity-100
+                        group-hover:visible
+                        group-hover:translate-y-0
+                        transition-all duration-300
+                        overflow-hidden
+                      "
+                    >
                       {item.dropdown.map((sub, i) => (
                         <NavLink
                           key={i}
                           to={sub.path}
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#C6A43F] hover:text-white"
+                          className={({ isActive }) =>
+                            `block px-5 py-3 text-sm font-medium transition
+                            ${
+                              isActive
+                                ? "bg-[#C6A43F] text-white"
+                                : "text-gray-700 hover:bg-[#C6A43F] hover:text-white"
+                            }`
+                          }
                         >
                           {sub.name}
                         </NavLink>
@@ -79,12 +105,24 @@ const Header = () => {
                   <NavLink
                     to={item.path}
                     className={({ isActive }) =>
-                      `relative font-medium transition ${
+                      `relative font-medium transition duration-300
+                      ${
                         isActive
                           ? "text-[#C6A43F]"
                           : "text-gray-700 hover:text-[#C6A43F]"
-                      } after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-[#C6A43F] after:transition-all after:duration-300 ${
-                        isActive ? "after:w-full" : "after:w-0 hover:after:w-full"
+                      }
+
+                      after:absolute
+                      after:left-0
+                      after:-bottom-1
+                      after:h-[2px]
+                      after:bg-[#C6A43F]
+                      after:transition-all
+                      after:duration-300
+                      ${
+                        isActive
+                          ? "after:w-full"
+                          : "after:w-0 hover:after:w-full"
                       }`
                     }
                   >
@@ -97,8 +135,11 @@ const Header = () => {
 
           {/* Mobile Button */}
           <div className="lg:hidden">
-            <button onClick={() => setIsOpen(true)}>
-              <Menu size={26} />
+            <button
+              onClick={() => setIsOpen(true)}
+              className="text-[#0A1628]"
+            >
+              <Menu size={28} />
             </button>
           </div>
         </div>
@@ -114,39 +155,59 @@ const Header = () => {
 
       {/* Mobile Sidebar */}
       <div
-        className={`fixed top-0 right-0 h-full w-72 bg-white shadow-xl z-40 transform transition-transform duration-300 ${
+        className={`fixed top-0 right-0 h-full w-72 bg-white shadow-2xl z-40 transform transition-transform duration-300 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        {/* Header */}
-        <div className="flex justify-between items-center p-4 border-b">
-          <h2 className="font-semibold text-lg">Menu</h2>
+
+        {/* Sidebar Header */}
+        <div className="flex justify-between items-center p-5 border-b">
+
+          <img
+            src={assets.removeLogo}
+            alt="logo"
+            className="w-[120px]"
+          />
+
           <button onClick={() => setIsOpen(false)}>
             <X size={24} />
           </button>
         </div>
 
-        {/* Links */}
-        <div className="p-4 space-y-3">
+        {/* Mobile Links */}
+        <div className="p-5 space-y-2">
+
           {navItems.map((item, idx) => (
+
             <div key={idx}>
+
+              {/* Mobile Dropdown */}
               {item.dropdown ? (
                 <>
                   <button
                     onClick={() => setPagesDropdown(!pagesDropdown)}
-                    className="w-full flex justify-between items-center py-2 font-medium"
+                    className="w-full flex justify-between items-center py-3 font-medium text-gray-700 hover:text-[#C6A43F]"
                   >
                     {item.name}
+
                     <ChevronDown
-                      size={16}
-                      className={`transition ${
+                      size={18}
+                      className={`transition duration-300 ${
                         pagesDropdown ? "rotate-180" : ""
                       }`}
                     />
                   </button>
 
-                  {pagesDropdown && (
-                    <div className="pl-4 space-y-2">
+                  {/* Dropdown Items */}
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ${
+                      pagesDropdown
+                        ? "max-h-60 opacity-100 mt-2"
+                        : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <div className="pl-4 border-l-2 border-[#C6A43F] space-y-2">
+
                       {item.dropdown.map((sub, i) => (
                         <NavLink
                           key={i}
@@ -155,19 +216,32 @@ const Header = () => {
                             setIsOpen(false);
                             setPagesDropdown(false);
                           }}
-                          className="block text-sm text-gray-600 hover:text-[#C6A43F]"
+                          className={({ isActive }) =>
+                            `block py-2 text-sm transition ${
+                              isActive
+                                ? "text-[#C6A43F] font-semibold"
+                                : "text-gray-600 hover:text-[#C6A43F]"
+                            }`
+                          }
                         >
                           {sub.name}
                         </NavLink>
                       ))}
+
                     </div>
-                  )}
+                  </div>
                 </>
               ) : (
                 <NavLink
                   to={item.path}
                   onClick={() => setIsOpen(false)}
-                  className="block py-2 text-gray-700 hover:text-[#C6A43F]"
+                  className={({ isActive }) =>
+                    `block py-3 font-medium transition ${
+                      isActive
+                        ? "text-[#C6A43F]"
+                        : "text-gray-700 hover:text-[#C6A43F]"
+                    }`
+                  }
                 >
                   {item.name}
                 </NavLink>
