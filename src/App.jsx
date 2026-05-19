@@ -9,12 +9,14 @@ import Internship from "./pages/Internship"
 import AdvisoryMembers from "./pages/AdvisoryMembers"
 import BlogPage from "./pages/BlogPage"
 import Contact from "./pages/Contact"
+import ScrollToTop from "./components/ScrollToTop"
 
 const App = () => {
   return (
     <>
 
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<WebLayout />}>
           <Route index element={<Home />} />
