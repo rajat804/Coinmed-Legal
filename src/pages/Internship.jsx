@@ -42,7 +42,9 @@ const Internship = () => {
   ];
 
   const handleApplyClick = () => {
-    window.open('https://docs.google.com/forms/d/1TRY9prWA1wz4SkSP3Wzcsg_-z3J1NR6Bidex32g8IrA/edit', '_blank');
+    // window.open('https://docs.google.com/forms/d/1TRY9prWA1wz4SkSP3Wzcsg_-z3J1NR6Bidex32g8IrA/edit', '_blank');
+    window.open('https://docs.google.com', '_blank');
+
   };
 
   return (
@@ -230,7 +232,7 @@ const Internship = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.102m1.102-4.768a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l6.586-6.586a4 4 0 00-5.586-5.586l-2.93 2.93" />
                 </svg>
                 <a 
-                  href="https://docs.google.com/forms/d/1TRY9prWA1wz4SkSP3Wzcsg_-z3J1NR6Bidex32g8IrA/edit"
+                  href="https://docs.google.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-yellow-600 hover:text-yellow-700 font-semibold break-all"
