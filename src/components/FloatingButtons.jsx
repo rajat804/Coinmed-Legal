@@ -24,7 +24,7 @@ const FloatingButtons = () => {
 
         {/* WhatsApp */}
         <a
-          href="https://wa.me/919999999999"
+          href="https://wa.me/+918009792188"
           target="_blank"
           rel="noopener noreferrer"
           className="group relative"
@@ -51,7 +51,7 @@ const FloatingButtons = () => {
 
         {/* Call */}
         <a
-          href="tel:+919999999999"
+          href="tel:+918009792188"
           className="group relative"
         >
 
