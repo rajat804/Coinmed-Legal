@@ -13,11 +13,11 @@ const TopBar = () => {
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-2 hover:text-[#C6A43F] transition-colors cursor-pointer group">
             <Mail size={14} className="text-[#C6A43F] group-hover:scale-110 transition-transform" />
-            <span>contact@insartlegal.com</span>
+            <span>legal.support@coinmedlegal.com</span>
           </div>
           <div className="flex items-center gap-2 hover:text-[#C6A43F] transition-colors cursor-pointer group">
             <Phone size={14} className="text-[#C6A43F] group-hover:scale-110 transition-transform" />
-            <span>+91 80097 92188</span>
+            <span>+91 99991 14284 || +91 98702 77495</span>
           </div>
         </div>
 
