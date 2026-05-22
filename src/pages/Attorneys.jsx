@@ -8,16 +8,15 @@ const Attorneys = () => {
   const attorneys = [
     {
       id: 1,
-      name: "Adv. Abhijeet Sharma",
-      designation: "Senior Partner & Founder",
+      name: "Mr. Ekramul Haque",
+      designation: "Senior Partner",
       experience: "25+ Years Experience",
       specialization: "Intellectual Property Rights, Corporate Law",
       education: "LL.M. from Harvard Law School",
       awards: "Top 10 Lawyers in India - 2023",
-      category: "senior",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop",
-      email: "abhijeet@coinmedlegal.com",
-      phone: "+91 80097 92188",
+      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&h=600&fit=crop",
+      email: "legal.support@coinmedlegal.com",
+      phone: "+91 98702 77495",
       social: {
         linkedin: "#",
         twitter: "#"
@@ -25,123 +24,122 @@ const Attorneys = () => {
     },
     {
       id: 2,
-      name: "Adv. Priya Mehta",
-      designation: "Managing Partner",
-      experience: "20+ Years Experience",
-      specialization: "Criminal Law, Matrimonial Matters",
-      education: "LL.B. from Delhi University",
-      awards: "Women Achiever in Law - 2022",
-      category: "senior",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop",
-      email: "priya@coinmedlegal.com",
-      phone: "+91 80097 92189",
-      social: {
-        linkedin: "#",
-        twitter: "#"
-      }
-    },
-    {
-      id: 3,
-      name: "Adv. Rajesh Kumar",
+      name: "Ms. Deepa Chacko",
       designation: "Senior Attorney",
       experience: "18+ Years Experience",
       specialization: "Medical Negligence, MACT",
       education: "LL.M. from National Law School",
       awards: "Best Litigator Award - 2021",
-      category: "senior",
-      image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=500&fit=crop",
-      email: "rajesh@coinmedlegal.com",
-      phone: "+91 80097 92190",
+      image:  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&h=600&fit=crop",
+      email: "legal.support@coinmedlegal.com",
+      phone: "+91 99991 14284, +91 88262 79589",
       social: {
         linkedin: "#",
         twitter: "#"
       }
     },
-    {
-      id: 4,
-      name: "Adv. Neha Singh",
-      designation: "Legal Consultant",
-      experience: "15+ Years Experience",
-      specialization: "Information Technology, Commercial Recovery",
-      education: "LL.B. from Mumbai University",
-      awards: "Rising Star in Cyber Law - 2023",
-      category: "associate",
-      image: "https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=400&h=500&fit=crop",
-      email: "neha@coinmedlegal.com",
-      phone: "+91 80097 92191",
-      social: {
-        linkedin: "#",
-        twitter: "#"
-      }
-    },
-    {
-      id: 5,
-      name: "Adv. Vikram Singh",
-      designation: "Senior Counsel",
-      experience: "22+ Years Experience",
-      specialization: "General Insurance, Commercial Disputes",
-      education: "LL.M. from Cambridge University",
-      awards: "Insurance Law Expert - 2020",
-      category: "senior",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop",
-      email: "vikram@coinmedlegal.com",
-      phone: "+91 80097 92192",
-      social: {
-        linkedin: "#",
-        twitter: "#"
-      }
-    },
-    {
-      id: 6,
-      name: "Adv. Anjali Desai",
-      designation: "Associate Partner",
-      experience: "12+ Years Experience",
-      specialization: "Matrimonial Matters, Family Law",
-      education: "LL.B. from Symbiosis Pune",
-      awards: "Family Law Specialist - 2023",
-      category: "associate",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=500&fit=crop",
-      email: "anjali@coinmedlegal.com",
-      phone: "+91 80097 92193",
-      social: {
-        linkedin: "#",
-        twitter: "#"
-      }
-    },
-    {
-      id: 7,
-      name: "Adv. Rohan Verma",
-      designation: "Criminal Defense Lawyer",
-      experience: "10+ Years Experience",
-      specialization: "Criminal Law, Cyber Crime",
-      education: "LL.M. from NLU Delhi",
-      awards: "Criminal Law Expert - 2022",
-      category: "associate",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop",
-      email: "rohan@coinmedlegal.com",
-      phone: "+91 80097 92194",
-      social: {
-        linkedin: "#",
-        twitter: "#"
-      }
-    },
-    {
-      id: 8,
-      name: "Adv. Sneha Kapoor",
-      designation: "IPR Specialist",
-      experience: "8+ Years Experience",
-      specialization: "Intellectual Property, Trademark, Patent",
-      education: "LL.M. from Oxford University",
-      awards: "IPR Young Achiever - 2023",
-      category: "associate",
-      image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=500&fit=crop",
-      email: "sneha@coinmedlegal.com",
-      phone: "+91 80097 92195",
-      social: {
-        linkedin: "#",
-        twitter: "#"
-      }
-    }
+    // {
+    //   id: 3,
+    //   name: "Adv. Rajesh Kumar",
+    //   designation: "Senior Attorney",
+    //   experience: "18+ Years Experience",
+    //   specialization: "Medical Negligence, MACT",
+    //   education: "LL.M. from National Law School",
+    //   awards: "Best Litigator Award - 2021",
+    //   category: "senior",
+    //   image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=500&fit=crop",
+    //   email: "rajesh@coinmedlegal.com",
+    //   phone: "+91 80097 92190",
+    //   social: {
+    //     linkedin: "#",
+    //     twitter: "#"
+    //   }
+    // },
+    // {
+    //   id: 4,
+    //   name: "Adv. Neha Singh",
+    //   designation: "Legal Consultant",
+    //   experience: "15+ Years Experience",
+    //   specialization: "Information Technology, Commercial Recovery",
+    //   education: "LL.B. from Mumbai University",
+    //   awards: "Rising Star in Cyber Law - 2023",
+    //   category: "associate",
+    //   image: "https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=400&h=500&fit=crop",
+    //   email: "neha@coinmedlegal.com",
+    //   phone: "+91 80097 92191",
+    //   social: {
+    //     linkedin: "#",
+    //     twitter: "#"
+    //   }
+    // },
+    // {
+    //   id: 5,
+    //   name: "Adv. Vikram Singh",
+    //   designation: "Senior Counsel",
+    //   experience: "22+ Years Experience",
+    //   specialization: "General Insurance, Commercial Disputes",
+    //   education: "LL.M. from Cambridge University",
+    //   awards: "Insurance Law Expert - 2020",
+    //   category: "senior",
+    //   image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop",
+    //   email: "vikram@coinmedlegal.com",
+    //   phone: "+91 80097 92192",
+    //   social: {
+    //     linkedin: "#",
+    //     twitter: "#"
+    //   }
+    // },
+    // {
+    //   id: 6,
+    //   name: "Adv. Anjali Desai",
+    //   designation: "Associate Partner",
+    //   experience: "12+ Years Experience",
+    //   specialization: "Matrimonial Matters, Family Law",
+    //   education: "LL.B. from Symbiosis Pune",
+    //   awards: "Family Law Specialist - 2023",
+    //   category: "associate",
+    //   image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=500&fit=crop",
+    //   email: "anjali@coinmedlegal.com",
+    //   phone: "+91 80097 92193",
+    //   social: {
+    //     linkedin: "#",
+    //     twitter: "#"
+    //   }
+    // },
+    // {
+    //   id: 7,
+    //   name: "Adv. Rohan Verma",
+    //   designation: "Criminal Defense Lawyer",
+    //   experience: "10+ Years Experience",
+    //   specialization: "Criminal Law, Cyber Crime",
+    //   education: "LL.M. from NLU Delhi",
+    //   awards: "Criminal Law Expert - 2022",
+    //   category: "associate",
+    //   image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop",
+    //   email: "rohan@coinmedlegal.com",
+    //   phone: "+91 80097 92194",
+    //   social: {
+    //     linkedin: "#",
+    //     twitter: "#"
+    //   }
+    // },
+    // {
+    //   id: 8,
+    //   name: "Adv. Sneha Kapoor",
+    //   designation: "IPR Specialist",
+    //   experience: "8+ Years Experience",
+    //   specialization: "Intellectual Property, Trademark, Patent",
+    //   education: "LL.M. from Oxford University",
+    //   awards: "IPR Young Achiever - 2023",
+    //   category: "associate",
+    //   image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=500&fit=crop",
+    //   email: "sneha@coinmedlegal.com",
+    //   phone: "+91 80097 92195",
+    //   social: {
+    //     linkedin: "#",
+    //     twitter: "#"
+    //   }
+    // }
   ];
 
   const categories = [
