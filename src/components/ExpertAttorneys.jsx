@@ -8,15 +8,15 @@ const ExpertAttorneys = () => {
   const attorneys = [
     {
       id: 1,
-      name: "Mr. Navy Charlie",
+      name: "Mr. Ekramul Haque",
       designation: "Senior Partner",
       experience: "25+ Years Experience",
       specialization: "Intellectual Property Rights, Corporate Law",
       education: "LL.M. from Harvard Law School",
       awards: "Top 10 Lawyers in India - 2023",
       image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&h=600&fit=crop",
-      email: "abhijeet@coinmedlegal.com",
-      phone: "+91 80097 92188",
+      email: "legal.support@coinmedlegal.com",
+      phone: "+91 98702 77495",
       social: {
         linkedin: "#",
         twitter: "#"
@@ -24,22 +24,6 @@ const ExpertAttorneys = () => {
     },
     {
       id: 2,
-      name: "Mr. James Mukkattukavunkal",
-      designation: "Managing Partner",
-      experience: "20+ Years Experience",
-      specialization: "Criminal Law, Matrimonial Matters",
-      education: "LL.B. from Delhi University",
-      awards: "Women Achiever in Law - 2022",
-      image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=500&h=600&fit=crop",
-      email: "priya@coinmedlegal.com",
-      phone: "+91 80097 92189",
-      social: {
-        linkedin: "#",
-        twitter: "#"
-      }
-    },
-    {
-      id: 3,
       name: "Ms. Deepa Chacko",
       designation: "Senior Attorney",
       experience: "18+ Years Experience",
@@ -47,8 +31,8 @@ const ExpertAttorneys = () => {
       education: "LL.M. from National Law School",
       awards: "Best Litigator Award - 2021",
       image:  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&h=600&fit=crop",
-      email: "rajesh@coinmedlegal.com",
-      phone: "+91 80097 92190",
+      email: "legal.support@coinmedlegal.com",
+      phone: "+91 99991 14284, +91 88262 79589",
       social: {
         linkedin: "#",
         twitter: "#"
