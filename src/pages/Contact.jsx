@@ -84,7 +84,7 @@ const Contact = () => {
         </svg>
       ),
       title: "Call Us",
-      details: ["+91 80097 92188", "+91 99991 14284"]
+      details: ["+91 99991 14284", "+91 88262 79589","+91 98702 77495"]
     },
     {
       icon: (
@@ -93,7 +93,7 @@ const Contact = () => {
         </svg>
       ),
       title: "Email Us",
-      details: ["contact@coinmedlegal.com", "support@coinmedlegal.com"]
+      details: ["legal.support@coinmedlegal.com"]
     },
     {
       icon: (
