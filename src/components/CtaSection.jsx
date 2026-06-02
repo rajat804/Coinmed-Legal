@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 const CtaSection = () => {
   return (
     <>
@@ -15,9 +16,9 @@ const CtaSection = () => {
               <button className="bg-gradient-to-r from-yellow-500 to-amber-500 hover:from-yellow-600 hover:to-amber-600 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
                 Schedule Consultation
               </button>
-              <button className="border-2 border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
+              <Link to={'/contact'} className="border-2 border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
                 Contact Us
-              </button>
+              </Link>
             </div>
           </div>
         </div>
