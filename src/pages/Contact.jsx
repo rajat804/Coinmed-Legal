@@ -10,6 +10,7 @@ const Contact = () => {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -47,20 +48,56 @@ const Contact = () => {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const sendToWhatsApp = (data) => {
+    // Target phone number
+    const phoneNumber = '919999114284'; // +91 99991 14284 without + symbol
+    
+    // Format the message
+    const message = `*New Enquiry from CoinMed Legal Website*%0A%0A
+*Name:* ${data.name}%0A
+*Phone:* ${data.phone}%0A
+*Email:* ${data.email}%0A
+*Message:* %0A${data.message}%0A%0A
+---%0A
+*Sent via Website Contact Form*`;
+    
+    // Create WhatsApp URL
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, '_blank');
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const newErrors = validateForm();
+    
     if (Object.keys(newErrors).length === 0) {
-      // Form is valid
-      console.log('Form submitted:', formData);
-      setIsSubmitted(true);
-      setFormData({
-        name: '',
-        phone: '',
-        email: '',
-        message: ''
-      });
-      setTimeout(() => setIsSubmitted(false), 5000);
+      setIsSubmitting(true);
+      
+      try {
+        // Send data to WhatsApp
+        sendToWhatsApp(formData);
+        
+        // Show success message
+        setIsSubmitted(true);
+        
+        // Reset form
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          message: ''
+        });
+        
+        // Hide success message after 5 seconds
+        setTimeout(() => setIsSubmitted(false), 5000);
+      } catch (error) {
+        console.error('Error sending message:', error);
+        alert('There was an error sending your message. Please try again.');
+      } finally {
+        setIsSubmitting(false);
+      }
     } else {
       setErrors(newErrors);
     }
@@ -106,6 +143,16 @@ const Contact = () => {
     }
   ];
 
+  // Helper function to create clickable phone links
+  const handlePhoneClick = (phoneNumber) => {
+    window.location.href = `tel:${phoneNumber}`;
+  };
+
+  // Helper function to create clickable email link
+  const handleEmailClick = (email) => {
+    window.location.href = `mailto:${email}`;
+  };
+
   return (
     <section className="py-12 md:py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
@@ -135,9 +182,36 @@ const Contact = () => {
                 {info.icon}
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">{info.title}</h3>
-              {info.details.map((detail, i) => (
-                <p key={i} className="text-gray-500 text-sm">{detail}</p>
-              ))}
+              {info.details.map((detail, i) => {
+                // Make phone numbers clickable
+                if (info.title === "Call Us" && detail.match(/\+91 \d{5} \d{5}/)) {
+                  const cleanNumber = detail.replace(/[^0-9]/g, '');
+                  return (
+                    <button
+                      key={i}
+                      onClick={() => handlePhoneClick(cleanNumber)}
+                      className="text-gray-500 text-sm hover:text-yellow-600 hover:underline block w-full transition-colors"
+                    >
+                      {detail}
+                    </button>
+                  );
+                }
+                // Make email clickable
+                if (info.title === "Email Us" && detail.includes('@')) {
+                  return (
+                    <button
+                      key={i}
+                      onClick={() => handleEmailClick(detail)}
+                      className="text-gray-500 text-sm hover:text-yellow-600 hover:underline block w-full transition-colors"
+                    >
+                      {detail}
+                    </button>
+                  );
+                }
+                return (
+                  <p key={i} className="text-gray-500 text-sm">{detail}</p>
+                );
+              })}
             </div>
           ))}
         </div>
@@ -157,7 +231,7 @@ const Contact = () => {
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span>Thank you! Your message has been sent successfully.</span>
+                <span>Thank you! Your message has been sent successfully. You will be redirected to WhatsApp to complete the message.</span>
               </div>
             )}
             
@@ -180,6 +254,7 @@ const Contact = () => {
                     onChange={handleChange}
                     className={`w-full pl-10 pr-4 py-3 border ${errors.name ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition`}
                     placeholder="Enter your full name"
+                    disabled={isSubmitting}
                   />
                 </div>
                 {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
@@ -203,6 +278,7 @@ const Contact = () => {
                     onChange={handleChange}
                     className={`w-full pl-10 pr-4 py-3 border ${errors.phone ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition`}
                     placeholder="Enter your phone number"
+                    disabled={isSubmitting}
                   />
                 </div>
                 {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
@@ -226,6 +302,7 @@ const Contact = () => {
                     onChange={handleChange}
                     className={`w-full pl-10 pr-4 py-3 border ${errors.email ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition`}
                     placeholder="Enter your email address"
+                    disabled={isSubmitting}
                   />
                 </div>
                 {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
@@ -249,6 +326,7 @@ const Contact = () => {
                     rows="5"
                     className={`w-full pl-10 pr-4 py-3 border ${errors.message ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition resize-none`}
                     placeholder="Write your message here..."
+                    disabled={isSubmitting}
                   ></textarea>
                 </div>
                 {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message}</p>}
@@ -257,14 +335,33 @@ const Contact = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-yellow-500 to-amber-500 hover:from-yellow-600 hover:to-amber-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 shadow-md flex items-center justify-center gap-2"
+                disabled={isSubmitting}
+                className={`w-full bg-gradient-to-r from-yellow-500 to-amber-500 hover:from-yellow-600 hover:to-amber-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 shadow-md flex items-center justify-center gap-2 ${
+                  isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
+                }`}
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                </svg>
-                Send Message
+                {isSubmitting ? (
+                  <>
+                    <svg className="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                    </svg>
+                    Send Message via WhatsApp
+                  </>
+                )}
               </button>
             </form>
+            
+            <p className="text-xs text-gray-400 text-center mt-4">
+              By submitting this form, you agree to our terms and privacy policy. You will be redirected to WhatsApp to complete your message.
+            </p>
           </div>
           
           {/* Map and Social Links */}
@@ -318,6 +415,29 @@ const Contact = () => {
                 </a>
               </div>
             </div>
+            
+            {/* WhatsApp Direct Contact */}
+            <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-2xl shadow-lg p-6 text-center text-white">
+              <div className="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                  <path d="M12 0C5.373 0 0 5.373 0 12c0 2.109.549 4.093 1.509 5.826L.088 23.912l6.164-1.421A11.96 11.96 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.833 0-3.559-.513-5.021-1.393l-.359-.215-3.659.845.845-3.659-.215-.359A9.98 9.98 0 012 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-2">Quick WhatsApp</h3>
+              <p className="text-green-100 mb-4">Chat directly with our legal team</p>
+              <a 
+                href="https://wa.me/919999114284" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-white text-green-600 font-semibold py-2 px-6 rounded-lg hover:bg-green-50 transition-all duration-300"
+              >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                </svg>
+                Start Chat
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -335,6 +455,17 @@ const Contact = () => {
         }
         .animate-fade-in {
           animation: fadeIn 0.5s ease-out;
+        }
+        @keyframes spin {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+        .animate-spin {
+          animation: spin 1s linear infinite;
         }
       `}</style>
     </section>
